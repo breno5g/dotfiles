@@ -1,0 +1,29 @@
+[user]
+	email = brenosantos145@gmail.com
+	name = Breno Santos
+[alias]
+  a = add
+  ai = add -i
+  ap = add -p
+  br = branch
+  c = !git add --all && git commit -m
+  cl = clone
+  clean = !git reset --hard && git clean -df
+  co = checkout
+  cob = checkout -b
+  d = diff
+  done = !git push --follow-tags origin HEAD
+  fix = commit --amend -m
+  ft = fetch
+  i = init --initial-branch=main
+  l = log --pretty=format:'%C(blue)%h %C(red)%h %C(red)%d%C(white)%s - %C(cyan)%cn, %C(green)%cr'
+  la = !"git config -l | grep alias | cut -c 7-"
+  pl = pull
+  ps = push
+  psf = push --force-with-lease
+  rm = branch -D
+  s = status -s
+  undo = reset HEAD~1 --mixed
+
+[core]
+	editor = lvim
