@@ -109,8 +109,8 @@ alias studies="cd ~/Development/studies/"
 
 # Job
 alias size="cd ~/Development/sizebay"
-alias mszb="size & cd ./mysizebay-reborn"
-alias tryon="size & cd ./tryon"
+alias mszb="size && cd ./mysizebay-reborn"
+alias tryon="size && cd ./tryon"
 
 # GO
 export GOPATH=$HOME/Development/go
