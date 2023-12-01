@@ -106,19 +106,26 @@ source $ZSH/oh-my-zsh.sh
 # Development
 alias dev="cd ~/Development"
 alias studies="cd ~/Development/studies/"
+alias pato="cd ~/Development/pato"
+alias update="yay --noconfirm"
 
 # Job
 alias size="cd ~/Development/sizebay"
 alias mszb="size && cd ./mysizebay-reborn"
 alias tryon="size && cd ./tryon"
+alias vfr="size && cd ./VirtualFittingRoom/V4"
+alias admin="size && cd ./MySizebay-API/webapp"
 
 # GO
 export GOPATH=$HOME/Development/go
 export PATH=$PATH:$GOPATH/bin
-alias gozinho="cd ~/Development/go/src/github.com/breno5g/Golang-studies"
+alias gozinho="cd ~/Development/go/src/github.com/breno5g"
+
+# Cargo
+export PATH=$HOME/.cargo/bin:$PATH
 
 # Exa
-alias ls="exa --icons"
+alias ls="eza --group-directories-first --icons"
 
 # neofetch
 alias neofetch="neofetch --ascii_distro arch"
@@ -127,10 +134,14 @@ alias neofetch="neofetch --ascii_distro arch"
 alias zshrc="lvim ~/.zshrc"
 
 # Exports
-export PATH=~/Development/go/bin//:$PATH
-
+# export PATH=~/Development/go/bin//:$PATH
 
 # Open tilix in same folder
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
+
+# Golang Log tester With Colors
+go_test() {
+  go test $* | sed ''/PASS/s//$(printf "\033[32mPASS\033[0m")/'' | sed ''/SKIP/s//$(printf "\033[34mSKIP\033[0m")/'' | sed ''/FAIL/s//$(printf "\033[31mFAIL\033[0m")/'' | sed ''/FAIL/s//$(printf "\033[31mFAIL\033[0m")/'' | GREP_COLORS='mt=01;33' egrep --color=always '\s*[a-zA-Z0-9\-_.]+[:][0-9]+[:]|^'
+}

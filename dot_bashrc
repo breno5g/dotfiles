@@ -135,3 +135,4 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
+[ -r /home/breno5g/.byobu/prompt ] && . /home/breno5g/.byobu/prompt   #byobu-prompt#
